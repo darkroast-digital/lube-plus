@@ -1,0 +1,143 @@
+.hero {
+	background: $c-primary;
+	background-image: url('/assets/img/header/bg.png');
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	@include hw($h: 60vh);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	position: relative;
+	
+	.ali {
+		position: absolute;
+		bottom: 0;
+		left: -100px;
+		max-height: 98%;
+		z-index: 10;
+	}
+	
+	.swirls {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: 20;
+	}
+	
+	
+	&__image {
+		width: size(1/4) gutter(1rem);
+		
+		@include mq(m) {
+			display: none;
+		} 
+		
+		img {
+			margin-bottom: -20px;
+		}
+	}
+	
+	&__description {
+		width: size(1/2);
+		position: absolute;
+		top: 50%;
+		right: 5%;
+		transform: translateY(-50%);
+		background-image: url('/assets/img/hero-location.jpg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		border: solid 3px $c-primary;
+		padding: 2rem;
+		max-width: 80%;
+		margin-bottom: 1rem;
+		@include shadow(heavy);
+		z-index: 30;
+		
+		h4 {
+			margin-bottom: 0;
+			margin-top: 2rem;
+			text-transform: uppercase;
+			color: $c-white;
+			line-height: 0;
+		}
+		
+		p {
+			color: $c-dark;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+		
+				
+		@include mq(m) {
+			max-width: 90%;
+			width: 100%;
+			padding: 1rem;
+			
+			h4 {
+				line-height: 1;
+			}
+		}
+	}
+	
+	&__guarantee {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		max-width: 60%;
+		
+		@include mq(m) {
+			display: none;
+		}
+		
+		img {
+			max-height: 150px;
+			
+			@include mq(m) {
+				max-height: 100px;
+			}
+		}
+	}
+	
+	&__content {
+		max-width: 1200px;
+		width: 1200px;
+		display: flex;
+		height: 100%;
+		align-items: flex-end;
+		
+		@include mq(m) {
+			padding: 0 1rem;
+		}
+		
+		h1,
+		h6 {
+			text-transform: uppercase;
+			color: #fff;
+			margin-bottom: 0;
+		}
+		
+		h1 {
+			text-shadow: 1px 1px 3px rgba($c-dark, .5);
+			margin-bottom: -1rem;
+			
+			@include mq(m) {
+				font-size: 2rem;
+			}
+		}
+		
+		h6 {
+			margin-bottom: $vertical-rhythm;
+			text-shadow: 1px 1px 3px rgba($c-dark, .5);
+		}
+		
+		.button {
+			@include button(shadow, $bg: $c-secondary);
+			color: $c-white;
+			text-transform: uppercase;
+		}
+	}
+}

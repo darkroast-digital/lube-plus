@@ -1,0 +1,123 @@
+.tabs__nav {
+	display: flex;
+	border-bottom: solid 1px $c-light;
+	
+	@include mq(m) {
+		display: none;
+	}
+	
+	li {
+		padding: .5rem 1rem;
+		border: solid 1px $c-light;
+		border-right: none;
+		border-bottom: none;
+		cursor: pointer;
+		position: relative;
+		
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: -1px;
+			left: -1px;
+			height: 1px;
+			width: calc(100% + 2px);
+			background: $c-primary;
+			opacity: 0;
+		}
+		
+		&.active {
+			
+			&:after {
+				opacity: 1;
+			}
+		}
+		
+		&:last-of-type {
+			border-right: solid 1px $c-light;
+		}
+	}
+}
+
+.tabs__container {
+	border: solid 1px $c-light;
+	border-top: none;
+	
+	@include mq(m) {
+		border: none;
+	}
+}
+
+.tab__content {
+	padding: 2rem;
+	
+	@include mq(m) {
+		border-left: solid 1px $c-light;
+		border-right: solid 1px $c-light;
+	}
+}
+
+.tab__drawer {
+	display: none;
+	cursor: pointer;
+	background: $c-lighter;
+	border: solid 1px $c-lighter;
+	padding: 1rem 2rem;
+	font-family: $font-two;
+	font-weight: bold;
+	@include type(font-size, 30rem, 75rem, 0.889rem, 1rem);
+	@include transition();
+	margin: 0;
+
+	&.active {
+		background: $c-white;
+	}
+	
+	@include mq(m) {
+		display: block;
+	}
+}
+
+.tab__service {
+	border-bottom: solid 1px $c-light;
+	display: flex;
+	margin-bottom: $vertical-rhythm;
+	
+	@include mq(m) {
+		display: block;
+	}
+}
+
+.tab__description {
+	width: size(3/4);
+	
+	@include mq(m) {
+		width: 100%;	
+	}
+	
+	p {
+		margin-bottom: $vertical-rhythm / 3;
+	}
+}
+
+.tab__price {
+	display: flex;
+	width: size(1/4);
+	align-items: center;
+	
+	@include mq(m) {
+		width: 100%;
+	}
+	
+	h2 {
+		text-align: center;
+		line-height: 1;
+		color: $c-font;
+		
+		span {
+			font-size: 1rem;
+			font-style: italic;
+			line-height: 1;
+			display: block;
+		}
+	}
+}

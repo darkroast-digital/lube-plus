@@ -1,0 +1,95 @@
+.nav {
+	position: relative;
+	width: 100%;
+	z-index: 50;
+	background-image: url('/assets/img/sky.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	@include shadow(heavy);
+
+	&__content {
+		@include row();
+		align-items: center;
+	}
+	
+	&__brand {
+		position: absolute;
+		top: 10px;
+		display: block;
+		width: 300px;
+		padding: .5rem;
+		
+		@include mq(m) {
+			position: relative;
+			width: 200px;
+		}
+		
+		img {
+			max-width: 100%;
+		}
+	}
+	
+	&__navbar {
+		display: flex;
+		background: linear-gradient($c-dark, $c-black);
+		justify-content: center;
+		
+			li {
+				position: relative;
+				border-left: solid 1px $c-font;
+
+				&:last-of-type {
+					border-right: solid 1px $c-font;
+				}
+
+				a {
+					display: block;
+					color: $c-light;
+					text-transform: uppercase;
+					font-weight: bold;
+					padding: 1rem 1rem;
+					@include transition($e: $easeInOutCubic);
+
+					&:hover {
+						color: #fff;
+					}
+		}
+	}
+		
+		@include mq(m) {
+			display: none;
+		}
+	}
+}
+
+.nav__socials {
+	display: flex;
+	padding: 1.5rem 0;
+	@include flex-right();
+	
+	@include mq(m) {
+		display: none;
+	}
+	
+	li {
+		
+		&:first-of-type {
+			
+			i {
+				margin-right: .5rem;
+			}
+		}
+		
+		a {
+			color: $c-white;
+			display: flex;
+			align-items: center;
+			padding: .5rem;
+
+			i {
+				font-size: 1.5rem;
+			}
+	}
+	}
+}
